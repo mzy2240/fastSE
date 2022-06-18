@@ -13,10 +13,10 @@ sparse matrix + jit + klu + custom improved ordering + python
 
 # 🌟Features
 
-* Jitted and KLU-powered [state estimation](https://github.com/mzy2240/fastSE/blob/master/fastse/se.py)
-* Jitted and KLU-powered [power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/pf.py)
-* Jitted and KLU-powered [continuation power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/cpf.py)
-* Jitted and KLU-powered [temperature-dependent power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/tdpf.py)
+* ⚡Jitted and KLU-powered [state estimation](https://github.com/mzy2240/fastSE/blob/master/fastse/se.py)
+* ⚡Jitted and KLU-powered [power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/pf.py)
+* ⚡Jitted and KLU-powered [continuation power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/cpf.py)
+* ⚡Jitted and KLU-powered [temperature-dependent power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/tdpf.py)
 
 # Installation
 
