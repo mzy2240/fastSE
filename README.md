@@ -1,4 +1,4 @@
-# FastSE
+# 🚀FastSE
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/fastSE.svg)](https://pypi.python.org/pypi/fastSE/)
 [![PyPI version fury.io](https://badge.fury.io/py/fastSE.svg)](https://pypi.python.org/pypi/fastSE/)
 [![Downloads](https://pepy.tech/badge/fastse)](https://pepy.tech/project/fastse)
