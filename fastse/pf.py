@@ -5,12 +5,17 @@ from kvxopt import matrix, klu
 import numpy as np
 from fastse.assemble import AC_jacobian
 # Import corresponding AOT/JIT functions
+import os
+import sys
 import platform
 import warnings
+import importlib
 PYTHON_VERSION = platform.python_version_tuple()
+sys.path.append(os.getcwd())
 if PYTHON_VERSION[1] in ['7', '8', '9', '10']:  # pragma: no cover
     try:
-        exec(f"from precompile{PYTHON_VERSION[0]}{PYTHON_VERSION[1]} import compute_normf")
+        pc = importlib.import_module(f"precompile3{PYTHON_VERSION[1]}")
+        # from precompile import compute_normf
     except ImportError or RuntimeError:
         warnings.warn("Fail to load ahead-of-time compiled module")
 
@@ -27,7 +32,7 @@ def nrpf(V, npv, npq, Ybus, Sbus, pv, pq, pvpq, base, tol=None):
 
     ## evaluate F(x0)
     mis = V * np.conj(Ybus * V) - Sbus
-    normF, F = compute_normf(mis[pv], mis[pq], mis[pq])
+    normF, F = pc.compute_normf(mis[pv], mis[pq], mis[pq])
     itr = 0
     if tol is None:
         tol = 0.1 / base
@@ -51,7 +56,7 @@ def nrpf(V, npv, npq, Ybus, Sbus, pv, pq, pvpq, base, tol=None):
         Vm = np.abs(V)  ## update Vm and Va again in case
         Va = np.angle(V)  ## we wrapped around with a negative Vm
         mis = V * np.conj(Ybus * V) - Sbus
-        normF, F = compute_normf(mis[pv], mis[pq], mis[pq])
+        normF, F = pc.compute_normf(mis[pv], mis[pq], mis[pq])
 
     Scalc = V * np.conj(Ybus * V)
     return Vm, Va, Scalc, normF, itr
