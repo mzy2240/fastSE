@@ -38,7 +38,7 @@ def run_tdpf(tas, tc0, rads, winds, V, npv, npq, r0, x, c, tap, shift, f, t, i, 
     tc = tc0.copy()
     tr0 = np.full(tran_indexes.sum(), 0)
 
-    V, tc, tr, r, Yf, Yt, it = tdpf_loop(V, npv, npq, Ybus, Sbus, pv, pq, pvpq, base, Cf, line_indexes,
+    V, tc, tr, r, Yf, Yt, it = tdpf_loop(V, npv, npq, Sbus, pv, pq, pvpq, base, Cf, line_indexes,
                                          tc, r0, tas, rads, winds, rates, tran_indexes, tr0, r, x, c, tap, shift, f, t, i, nl, nb, Ct, Ysh, tol, maxiter)
 
     # Compute system losses and remaining variables
