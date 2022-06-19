@@ -145,5 +145,6 @@ fastse/_test.ipynb
 fastse/performance.py
 fastse/assemble.py
 fastse/derivatives.py
+fastse/_precompile.py
 
 

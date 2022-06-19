@@ -8,8 +8,6 @@ from numba import njit, config
 from collections import namedtuple
 from scipy.sparse import csr_matrix
 from scipy.optimize import newton
-from fastse.pf import nrpf
-from fastse.helper import generate_admittance_matrix
 from fastse._aot import *
 from plum import dispatch
 
@@ -227,4 +225,4 @@ if __name__ == "__main__":
                       nb, Sbus, pv, pq, pvpq, base, line_indexes, tran_indexes, rates, 1e-3, 50)
 
     # print(result.temperature)
-    print(result.temperature)
+    # print(result.temperature)
