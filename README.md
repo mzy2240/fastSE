@@ -8,7 +8,7 @@
 
 > A collection of power system computation modules
 
-sparse matrix + jit + klu + custom improved ordering + python
+sparse matrix + aot/jit + klu + custom improved ordering + python
 = efficiency in computation and development!
 
 # 🌟Features
