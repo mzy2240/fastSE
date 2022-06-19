@@ -1,4 +1,4 @@
-# FastSE
+# 🚀FastSE
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/fastSE.svg)](https://pypi.python.org/pypi/fastSE/)
 [![PyPI version fury.io](https://badge.fury.io/py/fastSE.svg)](https://pypi.python.org/pypi/fastSE/)
 [![Downloads](https://pepy.tech/badge/fastse)](https://pepy.tech/project/fastse)
@@ -11,12 +11,12 @@
 sparse matrix + jit + klu + custom improved ordering + python
 = efficiency in computation and development!
 
-# Features
+# 🌟Features
 
-* Jitted and KLU-powered [state estimation](https://github.com/mzy2240/fastSE/blob/master/fastse/se.py)
-* Jitted and KLU-powered [power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/pf.py)
-* Jitted and KLU-powered [continuation power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/cpf.py)
-* Jitted and KLU-powered [temperature-dependent power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/tdpf.py)
+* ⚡Jitted and KLU-powered [state estimation](https://github.com/mzy2240/fastSE/blob/master/fastse/se.py)
+* ⚡Jitted and KLU-powered [power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/pf.py)
+* ⚡Jitted and KLU-powered [continuation power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/cpf.py)
+* ⚡Jitted and KLU-powered [temperature-dependent power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/tdpf.py)
 
 # Installation
 
