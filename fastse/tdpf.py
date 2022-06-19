@@ -213,7 +213,7 @@ if __name__ == "__main__":
     tran_indexes = (branch['BranchDeviceType'] == 'Transformer').to_numpy()
     num_lines = line_indexes.sum()
 
-    tc0 = np.full(num_lines, 25)
+    tc0 = np.full(num_lines, 25.0, dtype=float)
     # tas = np.random.uniform(20, 40, num_lines)
     tas = np.random.uniform(-10, 10, nl)
 
@@ -225,4 +225,4 @@ if __name__ == "__main__":
                       nb, Sbus, pv, pq, pvpq, base, line_indexes, tran_indexes, rates, 1e-3, 50)
 
     # print(result.temperature)
-    # print(result.temperature)
+    print(result.temperature)

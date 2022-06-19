@@ -5,19 +5,15 @@ from kvxopt import matrix, klu
 import numpy as np
 from fastse.assemble import AC_jacobian
 # Import corresponding AOT/JIT functions
-import os
+from os.path import dirname, abspath
 import sys
 import platform
 import warnings
 import importlib
 PYTHON_VERSION = platform.python_version_tuple()
-sys.path.append(os.getcwd())
-if PYTHON_VERSION[1] in ['7', '8', '9', '10']:  # pragma: no cover
-    try:
-        pc = importlib.import_module(f"precompile3{PYTHON_VERSION[1]}")
-        # from precompile import compute_normf
-    except ImportError or RuntimeError:
-        warnings.warn("Fail to load ahead-of-time compiled module")
+sys.path.append(abspath(dirname(__file__)))
+# print(abspath(dirname(__file__)))
+pc = importlib.import_module(f"precompile3{PYTHON_VERSION[1]}")
 
 
 def nrpf(V, npv, npq, Ybus, Sbus, pv, pq, pvpq, base, tol=None):
