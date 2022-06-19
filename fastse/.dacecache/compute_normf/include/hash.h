@@ -1,1 +1,0 @@
-#define __HASH_compute_normf_6 "8b6a081a7b8e2e34340ac6b32254792ebfb8b34c802307d0bdc7637f9d72f6f2"
