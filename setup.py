@@ -41,10 +41,6 @@ requirements = cfg.get('requirements','').split()
 lic = licenses[cfg['license']]
 min_python = cfg['min_python']
 
-# exclude files
-excluded_files = ['_precompile.py']
-included_modules = [f'fastse.{os.path.splitext(f)[0]}' for f in os.listdir('fastse') if f not in excluded_files and f.endswith('.py')]
-
 
 setuptools.setup(
     cmdclass={'bdist_wheel': CommandBdistWheel},
@@ -55,8 +51,7 @@ setuptools.setup(
     f'License :: {lic[1]}', 
     'Natural Language :: ' + cfg['language'].title()] + [f'Programming Language :: Python :: {o}' for o in py_versions[py_versions.index(min_python) :]], 
     url=cfg['git_url'], 
-    packages=setuptools.find_packages(exclude=['fastse']),
-    py_modules=included_modules,
+    packages=setuptools.find_packages(),
     include_package_data=True, 
     install_requires=requirements, 
     dependency_links=cfg.get('dep_links', '').split(), 

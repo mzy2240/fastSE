@@ -266,6 +266,26 @@ class EPCReader:
         sub = pd.DataFrame(data_dict['substation data']['data'])
         sub.rename({0: 'SubNum', 1: 'SubName', 2: 'Latitude', 3: 'Longitude'}, axis='columns', inplace=True)
         bus = pd.merge(bus, sub[['SubNum', 'Latitude', 'Longitude']], on='SubNum', how='left')
+        # add lat and long to the branch df
+        s_lon_f = []
+        s_lat_f = []
+        s_lon_t = []
+        s_lat_t = []
+        for a, b in zip(branch['BusNum'], branch['BusNum:1']):
+            bus_a = bus[bus['BusNum'] == a]
+            bus_b = bus[bus['BusNum'] == b]
+            lon_1 = bus_a['Longitude'].values[0]
+            lat_1 = bus_a['Latitude'].values[0]
+            lon_2 = bus_b['Longitude'].values[0]
+            lat_2 = bus_b['Latitude'].values[0]
+            s_lon_f.append(lon_1)
+            s_lat_f.append(lat_1)
+            s_lon_t.append(lon_2)
+            s_lat_t.append(lat_2)
+        branch['Longitude'] = s_lon_f
+        branch['Latitude'] = s_lat_f
+        branch['Longitude:1'] = s_lon_t
+        branch['Latitude:1'] = s_lat_t
         return base, bus, branch
 
 

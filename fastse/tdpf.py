@@ -94,7 +94,7 @@ if __name__ == "__main__":
     import time
 
     np.set_printoptions(precision=4, floatmode='fixed')
-    sa = SAW(r"C:\Users\test\PWCase\2000_hot.PWB", CreateIfNotFound=True)
+    sa = SAW(r"C:\Users\test\PWCase\ACTIVSg2000.pwb", CreateIfNotFound=True)
     sa.pw_order = True
     sa.RunScriptCommand('ResetToFlatStart(YES,NO,NO,NO);')
 
@@ -215,14 +215,15 @@ if __name__ == "__main__":
 
     tc0 = np.full(num_lines, 25.0, dtype=float)
     # tas = np.random.uniform(20, 40, num_lines)
-    tas = np.random.uniform(-10, 10, nl)
+    tas = np.random.uniform(25, 35, nl)
 
     radiations = np.random.uniform(800, 1200, num_lines)
-    winds = np.random.uniform(10, 15, num_lines)
+    winds = np.random.uniform(0, 15, num_lines)
 
     start = time.time()
     result = run_tdpf(tas, tc0, radiations, winds, V, npv, npq, r, x, c, tap, shift, f, t, i, nl,
                       nb, Sbus, pv, pq, pvpq, base, line_indexes, tran_indexes, rates, 1e-3, 50)
 
     # print(result.temperature)
-    print(result.temperature)
+    print(result.temperature[tran_indexes][:10])
+    print(result.temperature[line_indexes][:10])
