@@ -6,3 +6,4 @@ from .assemble import *
 from .performance import *
 from .helper import *
 from .io import *
+from .nr import *
