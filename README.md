@@ -17,6 +17,7 @@ sparse matrix + aot/jit + klu + custom improved ordering + python
 * ⚡Jitted and KLU-powered [power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/pf.py)
 * ⚡Jitted and KLU-powered [continuation power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/cpf.py)
 * ⚡Jitted and KLU-powered [temperature-dependent power flow](https://github.com/mzy2240/fastSE/blob/master/fastse/tdpf.py)
+* :crab:Rust-powered network routing for operational resilience
 
 # Installation
 
