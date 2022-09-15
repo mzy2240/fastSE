@@ -3,7 +3,10 @@
 
 import numpy as np
 from scipy.sparse import diags, csr_matrix, coo_matrix
-from scipy.sparse.linalg._dsolve import _superlu
+try:
+    from scipy.sparse.linalg._dsolve import _superlu
+except ModuleNotFoundError:
+    from scipy.sparse.linalg.dsolve import _superlu
 from kvxopt import matrix, spmatrix, spdiag, mul, exp, klu
 from fastse.assemble import construct_H_full
 from fastse.performance import nb_concatenate, add_diags, mul_diags, diagnoal_max
