@@ -10,7 +10,7 @@ class CommandBdistWheel(bdist_wheel):
     
     # Called almost exactly before filling `.whl` archive
     def write_wheelfile(self, *args, **kwargs):
-        dr = f'{self.bdist_dir}/<package name>'
+        dr = f"{self.bdist_dir}/<package name>"
         paths = [
             path for path in glob.glob(f'{dr}/**/*.py', recursive=True)
             if os.path.basename(path) != '__init__.py'

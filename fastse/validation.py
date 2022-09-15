@@ -20,6 +20,9 @@ def bdd_validation(results, m, n, chi2_prob_false=0.05):
         J = np.dot(r.T, np.dot(R_inv, r))
     test_thresh = chi2.ppf(1 - chi2_prob_false, m - n)
     if J <= test_thresh:
+        res = True
         console.print(f"BDD passed with residue {J:.3f}", style="bold green")
     else:
+        res = False
         console.print(f"BDD failed with residue {J:.3f}", style="bold red")
+    return res, J
